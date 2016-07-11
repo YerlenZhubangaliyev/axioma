@@ -1,0 +1,8 @@
+.content {
+  width: 100%;
+
+  .content {
+    @import "elements/content-left-side";
+    @import "elements/content-right-side";
+  }
+}

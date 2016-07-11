@@ -1,0 +1,9 @@
+&.content-left-side {
+  width: 80%;
+  float: left;
+
+  @include mq($until: tablet) {
+    width: 100%;
+    float: none;
+  }
+}
