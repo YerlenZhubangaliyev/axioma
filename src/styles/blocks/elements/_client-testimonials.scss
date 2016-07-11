@@ -1,0 +1,47 @@
+&-testimonials {
+  margin-top: 10px;
+
+  @extend .clearfix;
+
+  a {
+    margin-top: 10px;
+    float:      right;
+  }
+
+  > div {
+    margin-bottom: 6px;
+  }
+
+  &--author {
+    font-weight: 700;
+    font-size:   .9em;
+  }
+
+  &--company {
+    font-size: .8em;
+    color:     darken($color-grey-primary, 35%);
+  }
+
+  &--testimonial {
+    position:     relative;
+    margin:       20px 0 0 32px;
+    padding-left: 8px;
+    display:      block;
+    font-size:    .9em;
+    line-height:  1.2;
+
+    &:after {
+      position:    absolute;
+      font-family: italic Times, serif;
+      content:     open-quote;
+      font-size:   5em;
+      font-weight: 700;
+      color:       darken($color-grey-primary, 35%);
+      display:     block;
+      width:       32px;
+      top:         -22px;
+      left:        -38px;
+      z-index:     9999;
+    }
+  }
+}

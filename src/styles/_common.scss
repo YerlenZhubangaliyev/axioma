@@ -23,6 +23,7 @@ html, body {
   font-size:           1em !important;
   padding:             6px 10px 4px 10px;
   vertical-align:      middle;
+  cursor:              pointer;
 
   &.capitalized {
     text-transform: capitalize;
