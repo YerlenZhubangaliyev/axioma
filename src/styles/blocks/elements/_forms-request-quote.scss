@@ -1,6 +1,19 @@
 &-request-quote {
+  @extend .clearfix;
 
-  div {
+  margin: 0 0 50px;
 
+  > div {
+    margin: 0 0 4px 0;
+  }
+
+  textarea {
+    height: 80px;
+  }
+
+  input[type="submit"] {
+    float:      right;
+    margin-top: 6px;
   }
 }
+
