@@ -99,7 +99,7 @@
 }
 
 //
-@mixin separator($color: #ddd, $size: 24px, $margins: 14px) {
+@mixin separator($color: #eee, $size: 24px, $margins: 14px) {
   margin-top:  $margins;
   margin-left: $margins;
   width:       100%;
@@ -108,17 +108,21 @@
   .mask {
     overflow: hidden;
     height:   $size;
+
     &:after {
-      content:       '';
-      display:       block;
-      margin:        1px auto 0;
-      width:         50%;
-      height:        6px;
-      border-radius: 6px;
+      content:          '';
+      display:          block;
+      margin:           2px auto 0;
+      width:            50%;
+      height:           6px;
+      border-radius:    6px;
       background-color: $color;
+      box-shadow:       inset 0 1px 2px darken($color, 10%);
     }
   }
+
   span {
+    display:       block;
     width:         $size;
     height:        $size;
     position:      absolute;
@@ -128,5 +132,6 @@
     margin-left:   -$size/2;
     border-radius: 100%;
     background:    $color;
+    box-shadow:    inset 0 3px 2px darken($color, 10%);
   }
 }
