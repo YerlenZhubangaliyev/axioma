@@ -2,6 +2,10 @@
 node_modules/
 !public/fonts/.gitkeep
 !public/*.json
-public/
+public/fonts/
+public/scripts/
+public/styles/
+public/images/
+public/*.html
 _sprite.scss
 npm-debug.log
