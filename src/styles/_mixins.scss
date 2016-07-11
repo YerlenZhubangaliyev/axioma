@@ -1,0 +1,99 @@
+@import "../../node_modules/compass-mixins/lib/compass";
+@import "../../node_modules/compass-mixins/lib/compass/css3/font-face";
+@import "../../node_modules/compass-mixins/lib/compass/reset";
+@import "../../node_modules/compass-mixins/lib/compass/layout/sticky-footer";
+@import "../../node_modules/sass-mq/mq";
+@import "sprite";
+
+/**
+
+*/
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+                 url('#{$file-path}.woff') format('woff'),
+                 url('#{$file-path}.ttf') format('truetype'),
+                 url('#{$file-path}.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+  // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: $font-family;
+      src: url('#{$file-path}.svg##{$font-family}') format('svg');
+    }
+  }
+}
+
+/**
+*/
+@mixin shadowed-block($backgroundColor: white, $height: 100px, $shadowHeight: 2px) {
+  position:         relative;
+  background-color: $backgroundColor;
+  height:           $height;
+
+  &:before {
+    background-color: $backgroundColor;
+    position:         absolute;
+    bottom:           0;
+    left:             0;
+    width:            auto;
+    height:           $shadowHeight;
+    content:          '';
+    background:       -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background:       -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(226, 226, 226, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+    background:       -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background:       -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background:       -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background:       linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    filter:           progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
+  }
+}
+
+//
+@function sprite-attr($icon, $attr) {
+  $newIcon: map-get($icons, $icon);
+
+  @if $newIcon == null {
+    @warn "Can't find an icon with the name #{$icon}";
+  }
+
+  @return map-get($newIcon, $attr);
+}
+
+//
+@function icon-attr($icon) {
+  $attr: (
+    width:  sprite-attr($icon, width),
+    height: sprite-attr($icon, height),
+    x:      sprite-attr($icon, backgroundX),
+    y:      sprite-attr($icon, backgroundY)
+  );
+
+  @return $attr;
+}
+
+// Sprite
+@mixin sprite($icon, $type: all) {
+  $sprite: map-get($icons, sprite) !default;
+
+  @if $type == all {
+    display:          inline-block;
+    background-image: url(map-get($sprite, svgPath));
+    background-size:  map-get($sprite, width) map-get($sprite, height);
+  }
+
+  $iconMap: icon-attr($icon);
+
+  @if $type == all or $type == size {
+    width:  map-get($iconMap, width);
+    height: map-get($iconMap, height);
+  }
+
+  @if $type == all or $type == bg {
+    background-position: map-get($iconMap, x) map-get($iconMap, y);
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name":         "axioma-frontend-test",
+  "main":         "gulpfile.js",
+  "license":      "UNLICENSED",
+  "description":  "",
+  "repository":   "git@github.com:YerlenZhubangaliyev/axioma.git",
+  "dependencies": {
+    "webpack":         "*",
+    "webpack-stream":  "*",
+    "gulp":            "^3",
+    "gulp-if":         "*",
+    "gulp-cssnano":    "^2",
+    "gulp-plumber":    "^0.6",
+    "gulp-sass":       "^2",
+    "gulp-svg-sprite": "*",
+    "gulp-util":       "*",
+    "gulp-pug":        "*",
+    "require-dir":     "^0.1",
+    "run-sequence":    "*",
+    "node-sass":       "3.7",
+    "jquery":          "^2",
+    "compass-mixins":  "Igosuki/compass-mixins",
+    "sass-mq":         "^3",
+    "fs-extra":        "*"
+  }
+}

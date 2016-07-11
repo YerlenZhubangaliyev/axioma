@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+!public/fonts/.gitkeep
+public/
+_sprite.scss
+npm-debug.log
