@@ -1,5 +1,5 @@
 &-testimonials {
-  margin-top: 10px;
+  margin: 10px 0 20px;
 
   @extend .clearfix;
 
@@ -24,7 +24,7 @@
 
   &--testimonial {
     position:     relative;
-    margin:       20px 0 0 32px;
+    margin:       20px 0 0 38px;
     padding-left: 8px;
     display:      block;
     font-size:    .9em;
@@ -41,7 +41,6 @@
       width:       32px;
       top:         -22px;
       left:        -38px;
-      z-index:     9999;
     }
   }
 }

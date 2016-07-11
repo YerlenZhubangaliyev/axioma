@@ -1,13 +1,94 @@
 &-products {
   height: $header-products-height;
 
+  @include mq($until: tablet) {
+    height: $header-products-height-small;
+  }
+
   @include bg-gradient(
                   color(header-products-background-start-color),
                   color(header-products-background-end-color)
   );
 
-  @include shadowed-block(
-                  color(header-products-background-start-color),
-                  $header-tagLine-height
-  );
+  &--apps {
+    z-index: 99999;
+
+    ul {
+      position: absolute;
+      top:      $header-products--apps-top;
+      left:     calc(33% / 3);
+      width:    80%;
+      height:   auto;
+      //line-height: $header-products-height;
+
+      @include mq($until: tablet) {
+        //line-height: ($header-products-height / 1.5);
+      }
+
+      li {
+        position: relative;
+        float:    left;
+        width:    33%;
+
+        a, .substrate {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing:    border-box;
+          box-sizing:         border-box;
+          border:             1px solid darken($color-grey-primary, 20%);
+          border-radius:      100%;
+          display:            block;
+          width:              $header-products--apps-size;
+          height:             $header-products--apps-size;
+          margin:             0 auto;
+          position:           relative;
+          text-align:         center;
+
+          @include mq($until: tablet) {
+            width:  $header-products--apps-size / 1.5;
+            height: $header-products--apps-size / 1.5;
+          }
+        }
+
+        a {
+          background: white;
+          z-index:    2;
+
+          &:hover {
+            @at-root .header-products--apps li {
+
+            }
+
+            + .substrate {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .label {
+          position:   relative;
+          display:    block;
+          text-align: center;
+          top:        $header-products--apps-size + 36px;
+          height:     24px;
+
+          @include mq($until: tablet) {
+            top: $header-products--apps-size;
+          }
+
+          @include truncated();
+        }
+
+        .substrate {
+          transition: all .2s ease-in-out;
+          background: rgba(white, .5);
+          top:        -($header-products--apps-size);
+          z-index:    1;
+
+          @include mq($until: tablet) {
+            top: -($header-products--apps-size / 1.5);
+          }
+        }
+      }
+    }
+  }
 }
