@@ -11,8 +11,8 @@
     left:          0;
     width:         1em;
     height:        0.125em;
-    border-top:    0.375em double #000;
-    border-bottom: 0.125em solid #000;
+    border-top:    0.375em double darken($color-grey-primary, 30%);
+    border-bottom: 0.125em solid darken($color-grey-primary, 30%);
   }
 
   @include mq($from: desktop) {

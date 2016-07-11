@@ -13,4 +13,8 @@
     @import "elements/footer-social-links";
     @import "elements/footer-copyrights";
   }
+
+  @include mq($until: tablet) {
+    height: auto !important;
+  }
 }

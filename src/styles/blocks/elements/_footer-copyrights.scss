@@ -1,6 +1,8 @@
 &-copyrights {
-  float: right;
-  color: darken($color-grey-primary, 50%);
+  float:       right;
+  color:       darken($color-grey-primary, 50%);
+  margin:      10px 0 10px;
+  line-height: 32px;
 
   @include mq($until: tablet) {
     float: none;

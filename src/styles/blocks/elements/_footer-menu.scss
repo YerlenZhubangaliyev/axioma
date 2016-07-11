@@ -1,9 +1,17 @@
 &-menu {
+  float:       left;
+  margin:      10px 0 10px;
+  line-height: 32px;
+
+  a {
+    padding: 4px !important;
+    &.active {
+      background: lighten($color-grey-primary, 50%) !important;
+    }
+  }
+
   @extend .clearfix;
   @extend .menu;
-
-  float:  left;
-
   @include mq($until: tablet) {
     float: none;
   }

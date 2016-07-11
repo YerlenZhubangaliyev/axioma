@@ -36,20 +36,37 @@ blockquote {
   margin: 20px;
 
   .heading-title {
-    color: $color-blue-primary;
-    text-align: center;
+    color:          $color-blue-primary;
+    text-align:     center;
     text-transform: uppercase;
-    margin-left: 10px;
-    font-weight: 700;
+    margin-left:    10px;
+    font-weight:    700;
   }
 }
 
 .menu {
   li {
-    float: left;
+    float:        left;
+    margin-right: 4px;
 
     a {
+      padding:         4px;
+      text-decoration: none;
+      color:           $color-blue-primary;
+      text-transform:  capitalize;
 
+      &:hover {
+        text-decoration: underline;
+
+        &.active {
+          text-decoration: none;
+        }
+      }
+
+      &.active {
+        background: $color-grey-primary;
+        color:      darken($color-grey-primary, 50%);
+      }
     }
   }
 }
