@@ -33,7 +33,13 @@ blockquote {
 }
 
 .heading {
+  margin: 20px;
+
   .heading-title {
+    color: $color-blue-primary;
     text-align: center;
+    text-transform: uppercase;
+    margin-left: 10px;
+    font-weight: 700;
   }
 }

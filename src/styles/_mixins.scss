@@ -124,7 +124,7 @@
 }
 
 //
-@mixin separator($color: #eee, $size: 24px, $margins: 14px, $lineWidth: 40%) {
+@mixin separator($color: #eee, $size: 18px, $margins: 10px, $lineWidth: 40%) {
   pointer-events: none;
   margin-top:     $margins;
   margin-left:    $margins;
