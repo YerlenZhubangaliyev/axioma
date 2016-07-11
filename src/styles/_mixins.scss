@@ -30,17 +30,20 @@
 
 /**
 */
-@mixin shadowed-block($backgroundColor: white, $height: 100px, $shadowHeight: 2px) {
+@mixin shadowed-block($backgroundColor: #fff, $height: 100px, $shadowHeight: 4px) {
   position:         relative;
   background-color: $backgroundColor;
   height:           $height;
+  border-bottom:    1px solid white !important;
 
-  &:before {
+  &:after {
+    display:          block;
     background-color: $backgroundColor;
-    position:         absolute;
-    bottom:           0;
+    position:         relative;
+    margin:           0 auto;
+    bottom:           -($height);
     left:             0;
-    width:            auto;
+    width:            70%;
     height:           $shadowHeight;
     content:          '';
     background:       -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
@@ -48,7 +51,7 @@
     background:       -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
     background:       -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
     background:       -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
-    background:       linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    background:       linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(200, 200, 200, 1) 50%, rgba(255, 255, 255, 1) 100%);
     filter:           progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
   }
 }
@@ -138,17 +141,23 @@
 }
 
 //
-@mixin bg-gradient($start-colour, $end-colour) {
-  background-color: $start-colour;
-  background-image: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour));
-  background-image: -webkit-linear-gradient(top, $start-colour, $end-colour);
-  background-image: -moz-linear-gradient(top, $start-colour, $end-colour);
-  background-image: -ms-linear-gradient(top, $start-colour, $end-colour);
-  background-image: -o-linear-gradient(top, $start-colour, $end-colour);
-  background-image: linear-gradient(top, $start-colour, $end-colour);
-  filter:           progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}');
+@mixin bg-gradient($start-color, $end-color) {
+  background-color: $start-color;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($start-color), to($end-color));
+  background-image: -webkit-linear-gradient(top, $start-color, $end-color);
+  background-image: -moz-linear-gradient(top, $start-color, $end-color);
+  background-image: -ms-linear-gradient(top, $start-color, $end-color);
+  background-image: -o-linear-gradient(top, $start-color, $end-color);
+  background-image: linear-gradient(top, $start-color, $end-color);
+  filter:           progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-color}', end-colourStr='#{$end-color}');
 }
 
-@mixin color ($keyName) {
+//
+@function color ($keyName) {
+  @if map-has-key($colors, $keyName) {
+    @return map-get($colors, $keyName);
+  }
 
+  @warn "Unknown `#{$keyName}` in $colors.";
+  @return null;
 }

@@ -1,5 +1,6 @@
 .header {
-  width: 100%;
+  width:      100%;
+  margin-top: 40px;
 
   @extend .clearfix;
 
@@ -7,5 +8,6 @@
     @import "elements/header-logo";
     @import "elements/header-menu";
     @import "elements/header-tagLine";
+    @import "elements/header-products";
   }
 }

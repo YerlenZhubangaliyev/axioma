@@ -4,6 +4,14 @@ $mq-breakpoints: (
                          desktop: 980px,
                          wide: 1280px
                  );
+
+$color-blue-primary: #4e97c9;
+
 $colors: (
-                 base-color: #4e97c9,
-         );
+        header-tagLine-top-line: darken($color-blue-primary, 15%),
+        header-tagLine-bottom-line: white,
+        header-tagline-background-start-color: lighten($color-blue-primary, 15%),
+        header-tagline-background-end-color: $color-blue-primary,
+        header-products-background-start-color: lighten(#ddd, 20%),
+        header-products-background-end-color: #ddd,
+);
