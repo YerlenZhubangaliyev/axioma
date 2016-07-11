@@ -8,6 +8,7 @@
   );
 
   .footer {
+    @import "elements/footer-menu";
     @import "elements/footer-social-links";
   }
 }

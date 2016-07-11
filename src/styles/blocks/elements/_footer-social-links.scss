@@ -2,18 +2,25 @@
   @extend .clearfix;
 
   li {
-    float: left;
+    float:        left;
+    margin-right: 4px;
 
     &:nth-child(1) {
-      @include sprite(icon-fb);
+      a {
+        @include sprite(icon-fb);
+      }
     }
 
     &:nth-child(2) {
-      @include sprite(icon-tw);
+      a {
+        @include sprite(icon-tw);
+      }
     }
 
     &:nth-child(3) {
-      @include sprite(icon-in);
+      a {
+        @include sprite(icon-in);
+      }
     }
   }
 }
