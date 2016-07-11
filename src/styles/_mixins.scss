@@ -11,19 +11,19 @@
 @mixin font-face($font-family, $file-path, $font-weight, $font-style) {
   @font-face {
     font-family: $font-family;
-    src: url('#{$file-path}.eot');
-    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+    src:         url('#{$file-path}.eot');
+    src:         url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
                  url('#{$file-path}.woff') format('woff'),
                  url('#{$file-path}.ttf') format('truetype'),
                  url('#{$file-path}.svg##{$font-family}') format('svg');
     font-weight: $font-weight;
-    font-style: $font-style;
+    font-style:  $font-style;
   }
   // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     @font-face {
       font-family: $font-family;
-      src: url('#{$file-path}.svg##{$font-family}') format('svg');
+      src:         url('#{$file-path}.svg##{$font-family}') format('svg');
     }
   }
 }
@@ -67,11 +67,11 @@
 //
 @function icon-attr($icon) {
   $attr: (
-    width:  sprite-attr($icon, width),
-    height: sprite-attr($icon, height),
-    x:      sprite-attr($icon, backgroundX),
-    y:      sprite-attr($icon, backgroundY)
-  );
+                 width: sprite-attr($icon, width),
+                 height: sprite-attr($icon, height),
+                 x: sprite-attr($icon, backgroundX),
+                 y: sprite-attr($icon, backgroundY)
+         );
 
   @return $attr;
 }
@@ -95,5 +95,38 @@
 
   @if $type == all or $type == bg {
     background-position: map-get($iconMap, x) map-get($iconMap, y);
+  }
+}
+
+//
+@mixin separator($color: #ddd, $size: 24px, $margins: 14px) {
+  margin-top:  $margins;
+  margin-left: $margins;
+  width:       100%;
+  position:    relative;
+
+  .mask {
+    overflow: hidden;
+    height:   $size;
+    &:after {
+      content:       '';
+      display:       block;
+      margin:        1px auto 0;
+      width:         50%;
+      height:        6px;
+      border-radius: 6px;
+      background-color: $color;
+    }
+  }
+  span {
+    width:         $size;
+    height:        $size;
+    position:      absolute;
+    top:           -($margins/2);
+    margin-bottom: -$size/2;
+    left:          50%;
+    margin-left:   -$size/2;
+    border-radius: 100%;
+    background:    $color;
   }
 }
