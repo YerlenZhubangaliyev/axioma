@@ -27,3 +27,13 @@ blockquote {
     color:      white;
   }
 }
+
+.separator {
+  @include separator();
+}
+
+.heading {
+  .heading-title {
+    text-align: center;
+  }
+}

@@ -1,6 +1,7 @@
-&.content-right-side {
-  width: 30%;
-  float: right;
+&-right-side {
+  width:    30%;
+  float:    right;
+  position: relative;
 
   @include mq($until: tablet) {
     width: 100%;
