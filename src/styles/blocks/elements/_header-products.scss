@@ -1,9 +1,8 @@
 &-products {
-  height:        100px!important;
+  height:        $header-products-height;
 
   @include bg-gradient(
                   color(header-products-background-start-color),
                   color(header-products-background-end-color)
   );
 }
-

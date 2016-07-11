@@ -2,12 +2,20 @@
   border-top:    1px solid color(header-tagLine-top-line);
   border-bottom: 1px solid color(header-tagLine-bottom-line);
   margin-top:    20px;
+  line-height:   $header-tagLine-height;
+  color:         white;
+  font-size:     1.8em;
+  letter-spacing: 1px;
+  text-align:    center;
+  text-shadow:   1px 1px 1px color(header-tagLine-top-line);
 
   @include bg-gradient(
                   color(header-tagline-background-start-color),
                   color(header-tagline-background-end-color)
   );
 
-  @include shadowed-block(color(header-products-background-start-color), 114px);
+  @include shadowed-block(
+                  color(header-products-background-start-color),
+                  $header-tagLine-height
+  );
 }
-
