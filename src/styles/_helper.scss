@@ -9,6 +9,11 @@
 
   @extend .clearfix;
 
+  @include mq($until: tablet) {
+    width:     90%;
+    min-width: 90%;
+  }
+
   @include mq($from: wide) {
     width:     70%;
     min-width: 70%;

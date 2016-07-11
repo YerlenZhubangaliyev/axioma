@@ -1,0 +1,19 @@
+&-social-links {
+  @extend .clearfix;
+
+  li {
+    float: left;
+
+    &:nth-child(1) {
+      @include sprite(icon-fb);
+    }
+
+    &:nth-child(2) {
+      @include sprite(icon-tw);
+    }
+
+    &:nth-child(3) {
+      @include sprite(icon-in);
+    }
+  }
+}
