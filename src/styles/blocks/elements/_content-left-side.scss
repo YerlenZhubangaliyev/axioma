@@ -1,9 +1,19 @@
-&.content-left-side {
+&-left-side {
   width: 80%;
   float: left;
 
   @include mq($until: tablet) {
     width: 100%;
     float: none;
+  }
+
+  &--paragraph {
+    margin-top: 10px;
+
+    p {
+      font-size:   .9em;
+      margin-top:  20px;
+      line-height: 1.2;
+    }
   }
 }

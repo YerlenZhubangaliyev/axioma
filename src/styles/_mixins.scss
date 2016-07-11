@@ -43,7 +43,7 @@
     margin:           0 auto;
     top:              0;
     left:             0;
-    width:            70%;
+    width:            90%;
     height:           $shadowHeight;
     content:          '';
     z-index:          9999;
@@ -63,7 +63,7 @@
     margin:           0 auto;
     top:              $shadowHeight;
     left:             0;
-    width:            70%;
+    width:            90%;
     height:           $shadowHeight;
     content:          '';
     background:       -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(200, 200, 200, 1) 50%, rgba(255, 255, 255, 1) 100%);
@@ -191,4 +191,11 @@
   -ms-filter:     $filter-type+unquote('(#{$filter-amount})');
   -o-filter:      $filter-type+unquote('(#{$filter-amount})');
   filter:         $filter-type+unquote('(#{$filter-amount})');
+}
+
+//
+@mixin truncated($overflow: ellipsis) {
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: $overflow;
 }

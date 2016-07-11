@@ -1,3 +1,7 @@
-div(class = ['container content'])
-    include elements/content-left-side.pug
-    include elements/content-right-side.pug
+div(class = ['content'])
+    include header.pug
+
+    div(class = ['container'])
+        include elements/content-left-side.pug
+        include elements/content-right-side.pug
+    div(class = ['footer-sticky'])

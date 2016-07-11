@@ -1,2 +1,25 @@
 @include font-face("defaultgothicbgauge", "../fonts/defaultgothicbgauge-webfont", 300, normal);
 @include font-face("SohoGothicPro", "../fonts/SohoGothicPro-Regular", 300, normal);
+@include sticky-footer(54px, ".content", ".footer-sticky", ".footer");
+
+.button {
+  @include truncated();
+
+  border-radius: 4px;
+}
+
+blockquote {
+  padding:     20px;
+  margin:      20px;
+  font-size:   1.1em;
+  line-height: 1.5;
+
+  &.regular {
+    color: inherit;
+  }
+
+  &.accented {
+    background: $color-blue-primary;
+    color:      white;
+  }
+}

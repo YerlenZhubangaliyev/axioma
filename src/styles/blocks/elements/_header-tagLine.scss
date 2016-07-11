@@ -18,10 +18,9 @@
   }
 
   @include mq($until: tablet) {
-    font-size:     1em;
-    white-space:   nowrap;
-    overflow:      hidden;
-    text-overflow: ellipsis;
+    font-size: 1em;
+
+    @include truncated();
   }
 
   @include bg-gradient(
