@@ -5,4 +5,9 @@
                   color(header-products-background-start-color),
                   color(header-products-background-end-color)
   );
+
+  @include shadowed-block(
+                  color(header-products-background-start-color),
+                  $header-tagLine-height
+  );
 }

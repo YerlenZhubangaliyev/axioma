@@ -1,21 +1,31 @@
 &-tagLine {
-  border-top:    1px solid color(header-tagLine-top-line);
-  border-bottom: 1px solid color(header-tagLine-bottom-line);
-  margin-top:    20px;
-  line-height:   $header-tagLine-height;
-  color:         white;
-  font-size:     1.8em;
+  border-top:     1px solid color(header-tagLine-top-line);
+  border-bottom:  1px solid color(header-tagLine-bottom-line);
+  margin-top:     20px;
+  line-height:    $header-tagLine-height;
+  color:          white;
   letter-spacing: 1px;
-  text-align:    center;
-  text-shadow:   1px 1px 1px color(header-tagLine-top-line);
+  text-align:     center;
+  text-shadow:    1px 1px 1px color(header-tagLine-top-line);
+  padding:        0 10px 0 10px;
+
+  @include mq($from: desktop) {
+    font-size: 1.8em;
+  }
+
+  @include mq($until: desktop) {
+    font-size: 1.4em;
+  }
+
+  @include mq($until: tablet) {
+    font-size:     1em;
+    white-space:   nowrap;
+    overflow:      hidden;
+    text-overflow: ellipsis;
+  }
 
   @include bg-gradient(
                   color(header-tagline-background-start-color),
                   color(header-tagline-background-end-color)
-  );
-
-  @include shadowed-block(
-                  color(header-products-background-start-color),
-                  $header-tagLine-height
   );
 }

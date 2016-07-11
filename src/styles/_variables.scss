@@ -17,9 +17,9 @@ $color-green-primary: #6fb338;
 $colors: (
         header-tagLine-top-line:                darken($color-blue-primary, 15%),
         header-tagLine-bottom-line:             white,
-        header-tagline-background-start-color:  lighten($color-blue-primary, 15%),
+        header-tagline-background-start-color:  lighten($color-blue-primary, 20%),
         header-tagline-background-end-color:    $color-blue-primary,
-        header-products-background-start-color: lighten(#ddd, 20%),
+        header-products-background-start-color: lighten($color-grey-primary, 10%),
         header-products-background-end-color:   $color-grey-primary,
 );
 
