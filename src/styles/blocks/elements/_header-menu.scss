@@ -1,6 +1,7 @@
 &-menu {
   float:       right;
   line-height: 52px;
+  position: relative;
 
   @extend .clearfix;
   @extend .menu;

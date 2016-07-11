@@ -5,4 +5,8 @@
   font-size:      1.4em;
   margin-left:    8px;
   color:          darken($color-grey-primary, 24%);
+
+  @include mq($until: tablet) {
+    font-size: .8em;
+  }
 }
