@@ -2,6 +2,10 @@
   width: 70%;
   float: left;
 
+  @include mq($until: desktop) {
+    width: 60%;
+  }
+
   @include mq($until: tablet) {
     width: 100%;
     float: none;

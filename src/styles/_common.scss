@@ -8,8 +8,16 @@ html, body {
 
 .button {
   @include truncated();
+  @include button($color-green-primary);
 
-  border-radius: 4px;
+  border-radius:  4px;
+  text-transform: uppercase;
+  color:           white !important;
+  text-decoration: none;
+
+  small {
+    font-size: 80%;
+  }
 }
 
 blockquote {
@@ -18,13 +26,18 @@ blockquote {
   font-size:   1.1em;
   line-height: 1.5;
 
+  @include mq($until: tablet) {
+    margin: 20px 0 20px 0;
+  }
+
   &.regular {
     color: inherit;
   }
 
   &.accented {
-    background: $color-blue-primary;
-    color:      white;
+    background:  $color-blue-primary;
+    color:       white;
+    text-shadow: 1px 1px 1px darken($color-blue-primary, 20%);
   }
 }
 
@@ -41,6 +54,8 @@ blockquote {
     text-transform: uppercase;
     margin-left:    10px;
     font-weight:    700;
+
+    @include truncated();
   }
 }
 
