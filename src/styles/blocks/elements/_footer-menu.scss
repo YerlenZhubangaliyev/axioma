@@ -1,4 +1,10 @@
 &-menu {
   @extend .clearfix;
   @extend .menu;
+
+  float:  left;
+
+  @include mq($until: tablet) {
+    float: none;
+  }
 }

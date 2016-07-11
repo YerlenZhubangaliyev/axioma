@@ -1,6 +1,8 @@
 &-social-links {
   @extend .clearfix;
 
+  clear: both;
+
   li {
     float:        left;
     margin-right: 4px;

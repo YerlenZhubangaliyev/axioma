@@ -1,6 +1,7 @@
 .footer {
   background: $color-grey-primary;
   height:     $footer-height;
+  font-size:  .8em;
 
   @include bg-gradient(
                   color(footer-background-start-color),
@@ -10,5 +11,6 @@
   .footer {
     @import "elements/footer-menu";
     @import "elements/footer-social-links";
+    @import "elements/footer-copyrights";
   }
 }

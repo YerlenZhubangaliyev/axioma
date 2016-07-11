@@ -1,0 +1,8 @@
+&-copyrights {
+  float: right;
+  color: darken($color-grey-primary, 50%);
+
+  @include mq($until: tablet) {
+    float: none;
+  }
+}
