@@ -1,6 +1,10 @@
 @include font-face("defaultgothicbgauge", "../fonts/defaultgothicbgauge-webfont", 300, normal);
-@include font-face("SohoGothicPro", "../fonts/SohoGothicPro-Regular", 300, normal);
+@include font-face("SohoGothicPro-regular", "../fonts/SohoGothicPro-Regular", 300, normal);
 @include sticky-footer(54px, ".content", ".footer-sticky", ".footer");
+
+html, body {
+  font-family: "SohoGothicPro-regular", sans-serif !important;
+}
 
 .button {
   @include truncated();

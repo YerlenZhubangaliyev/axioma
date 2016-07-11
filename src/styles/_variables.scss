@@ -7,8 +7,9 @@ $mq-breakpoints: (
 
 $header-tagLine-height: 114px;
 $header-products-height: 100px;
-
 $header-margin-top: 40px;
+
+$footer-height: 100px;
 
 $color-blue-primary: #4e97c9;
 $color-grey-primary: #d5d5d5;
@@ -21,5 +22,7 @@ $colors: (
                  header-tagline-background-end-color: $color-blue-primary,
                  header-products-background-start-color: lighten($color-grey-primary, 10%),
                  header-products-background-end-color: $color-grey-primary,
+                 footer-background-start-color: $color-grey-primary,
+                 footer-background-end-color: lighten($color-grey-primary, 10%),
          );
 

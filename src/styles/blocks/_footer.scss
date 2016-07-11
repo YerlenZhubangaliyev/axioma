@@ -1,5 +1,11 @@
 .footer {
   background: $color-grey-primary;
+  height:     $footer-height;
+
+  @include bg-gradient(
+                  color(footer-background-start-color),
+                  color(footer-background-end-color)
+  );
 
   .footer {
     @import "elements/footer-social-links";
