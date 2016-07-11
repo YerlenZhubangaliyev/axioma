@@ -99,13 +99,14 @@
 }
 
 //
-@mixin separator($color: #eee, $size: 24px, $margins: 14px) {
-  margin-top:  $margins;
-  margin-left: $margins;
-  width:       100%;
-  position:    relative;
+@mixin separator($color: #eee, $size: 24px, $margins: 14px, $lineWidth: 20%) {
+  pointer-events: none;
+  margin-top:     $margins;
+  margin-left:    $margins;
+  width:          auto;
+  position:       relative;
 
-  .mask {
+  .separator-mask {
     overflow: hidden;
     height:   $size;
 
@@ -113,7 +114,7 @@
       content:          '';
       display:          block;
       margin:           2px auto 0;
-      width:            50%;
+      width:            $lineWidth;
       height:           6px;
       border-radius:    6px;
       background-color: $color;
@@ -134,4 +135,20 @@
     background:    $color;
     box-shadow:    inset 0 3px 2px darken($color, 10%);
   }
+}
+
+//
+@mixin bg-gradient($start-colour, $end-colour) {
+  background-color: $start-colour;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour));
+  background-image: -webkit-linear-gradient(top, $start-colour, $end-colour);
+  background-image: -moz-linear-gradient(top, $start-colour, $end-colour);
+  background-image: -ms-linear-gradient(top, $start-colour, $end-colour);
+  background-image: -o-linear-gradient(top, $start-colour, $end-colour);
+  background-image: linear-gradient(top, $start-colour, $end-colour);
+  filter:           progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}');
+}
+
+@mixin color ($keyName) {
+
 }

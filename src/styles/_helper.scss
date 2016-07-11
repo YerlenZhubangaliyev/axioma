@@ -1,0 +1,14 @@
+.clearfix {
+  @include clearfix();
+}
+
+.container {
+  margin:    0 auto;
+  min-width: 90%;
+  width:     90%;
+
+  @include mq($from: wide) {
+    width:     70%;
+    min-width: 70%;
+  }
+}

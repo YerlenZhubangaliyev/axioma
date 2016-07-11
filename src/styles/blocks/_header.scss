@@ -1,5 +1,11 @@
 .header {
   width: 100%;
 
-  @import "elements/header-menu";
+  @extend .clearfix;
+
+  .header {
+    @import "elements/header-logo";
+    @import "elements/header-menu";
+    @import "elements/header-tagLine";
+  }
 }
