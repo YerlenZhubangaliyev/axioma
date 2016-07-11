@@ -24,7 +24,7 @@ var
             javascriptMainFile:   'src/scripts/main.js',
             javascriptFiles:      'src/scripts/**/*.js',
             styleFiles:           'src/**/*.scss',
-            svgFiles:             'src/**/*.svg',
+            svgFiles:             'src/images/**/*.svg',
             defaultHtml:          'public/index.html'
         },
         dist:    {

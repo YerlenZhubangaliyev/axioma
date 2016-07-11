@@ -1,9 +1,5 @@
 .header {
   width: 100%;
 
-  &-menu {
-    &--active {
-
-    }
-  }
+  @import "elements/header-menu";
 }
