@@ -5,10 +5,10 @@ $mq-breakpoints: (
                          wide: 1280px
                  );
 
-$header-tagLine-height:   124px;
-$header-products-height:  116px;
-$header-products-height-small:  100px;
-$header-margin-top:       40px;
+$header-tagLine-height: 124px;
+$header-products-height: 116px;
+$header-products-height-small: 100px;
+$header-margin-top: 40px;
 $header-products--apps-top: 190px;
 $header-products--apps-size: 100px;
 
@@ -17,6 +17,9 @@ $footer-height: 100px;
 $color-blue-primary: #4e97c9;
 $color-grey-primary: #d5d5d5;
 $color-green-primary: #6fb338;
+
+$color-error: #e98c8c;
+$color-success: #ddeece;
 
 $colors: (
                  header-tagLine-top-line: darken($color-blue-primary, 15%),

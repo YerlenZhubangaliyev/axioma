@@ -1,12 +1,14 @@
-form(class = ["forms-request-quote"], data-url = "")
-    div
+form(class = ["forms-request-quote"], data-url = "", data-success = "Thank you for your message")
+    div(class = 'field-name', data-error = 'Please enter your name')
         label Your name
-        input(type = "text")/
-    div
+        input(type = "text", name = "name")/
+    div(class = 'field-email', data-error = 'Please enter your email address')
         label E-mail
-        input(type = "email")/
-    div
+        input(type = "text", name = "email")/
+    div(class = 'field-message', data-error = 'Please enter a message')
         label Message
-        textarea
+        textarea(name = "message")
     div
         input(type = "submit", class = ["button"], value = "send")/
+    div(class = ['another-message'])
+        a(href = '#!') Send another message

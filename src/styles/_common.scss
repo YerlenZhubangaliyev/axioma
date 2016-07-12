@@ -103,24 +103,28 @@ blockquote {
   }
 }
 
+.link {
+  padding:         2px 4px 2px 4px;
+  text-decoration: none;
+  color:           $color-blue-primary;
+  text-transform:  capitalize;
+
+  &:hover {
+    text-decoration: underline;
+
+    &.active {
+      text-decoration: none;
+    }
+  }
+}
+
 .menu {
   li {
     float:        left;
     margin-right: 4px;
 
     a {
-      padding:         2px 4px 2px 4px;
-      text-decoration: none;
-      color:           $color-blue-primary;
-      text-transform:  capitalize;
-
-      &:hover {
-        text-decoration: underline;
-
-        &.active {
-          text-decoration: none;
-        }
-      }
+      @extend .link;
 
       &.active {
         background: $color-grey-primary;
